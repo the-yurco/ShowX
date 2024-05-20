@@ -1,9 +1,14 @@
-import Image from 'next/image';
+import ShowList from '@/components/ShowList';
+import { Show } from '@/serveractions/main';
 
-export default function Home() {
+type Props = {
+	shows: Show[];
+};
+
+export default function Home({ shows }: Props) {
 	return (
 		<main className="w-5/6 mx-auto">
-			<h1>start</h1>
+			<ShowList shows={shows} />
 		</main>
 	);
 }

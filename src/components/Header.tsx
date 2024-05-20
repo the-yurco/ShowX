@@ -13,7 +13,7 @@ const Header = (props: Props) => {
 						MovieX
 					</Link>
 				</div>
-				<div className="w-1/4 text-sm hover:text-neutral-200 transition-all duration-300 flex gap-3 justify-between items-center">
+				<div className="w-1/5 text-xs hover:text-neutral-200 transition-all duration-300 flex gap-6 justify-between items-center">
 					<div className="flex gap-6 items-center">
 						<Link href={'/about'}>About</Link>
 						<Link href={'/favourites'}>Favourites</Link>
