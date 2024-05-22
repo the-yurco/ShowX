@@ -1,14 +1,11 @@
-import ShowList from '@/components/ShowList';
-import { Show } from '@/serveractions/main';
+import { FetchData } from '@/api/fetchFunctions';
+import { showUrl } from '@/config';
+import type { Show } from '@/api/types';
+import Link from 'next/link';
+import Image from 'next/image';
 
-type Props = {
-	shows: Show[];
+const Home = async () => {
+	return <div></div>;
 };
 
-export default function Home({ shows }: Props) {
-	return (
-		<main className="w-5/6 mx-auto">
-			<ShowList shows={shows} />
-		</main>
-	);
-}
+export default Home;
