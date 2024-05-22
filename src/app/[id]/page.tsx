@@ -11,7 +11,7 @@ const getShowData = async (id: number) => {
 
 	const name = show.name;
 	const summary = show.summary;
-	const officialSite = show.officialSite;
+	const url = show.url;
 	const genres1 = show.genres[0];
 	const genres2 = show.genres[1];
 	const genres3 = show.genres[2];
@@ -21,7 +21,7 @@ const getShowData = async (id: number) => {
 	return {
 		name,
 		summary,
-		officialSite,
+		url,
 		genres1,
 		genres2,
 		genres3,
@@ -31,16 +31,8 @@ const getShowData = async (id: number) => {
 };
 
 const Show = async ({ params }: { params: { id: number } }) => {
-	const {
-		name,
-		summary,
-		officialSite,
-		genres1,
-		genres2,
-		genres3,
-		language,
-		image
-	} = await getShowData(params.id);
+	const { name, summary, url, genres1, genres2, genres3, language, image } =
+		await getShowData(params.id);
 
 	return (
 		<div className="mt-5">
@@ -66,7 +58,7 @@ const Show = async ({ params }: { params: { id: number } }) => {
 						<p className="text-sm">Language: {language}</p>
 
 						<Link
-							href={officialSite}
+							href={name}
 							target="_blank"
 							className="text-sm text-blue-600"
 						></Link>

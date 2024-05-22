@@ -10,7 +10,7 @@ export type Show = {
 	averageRuntime: number;
 	premiered: string;
 	ended?: string;
-	officialSite: string;
+	officialSite?: string;
 	schedule: {
 		time: string;
 		days: string[];
