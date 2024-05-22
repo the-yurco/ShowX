@@ -52,3 +52,15 @@ export type Show = {
 		};
 	};
 };
+
+export type Episode = {
+	id: number;
+	name: string;
+	permalink: string;
+	start_date: string;
+	end_date: string | null;
+	country: string;
+	network: string;
+	status: 'Running' | 'Ended';
+	image_thumbnail_path: string;
+};

@@ -3,6 +3,12 @@ import { allShowsUrl, showUrl } from '@/config';
 import type { Show } from '@/api/types';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+	title: 'ShowX | Shows',
+	description: 'ShowX website created by Iurai'
+};
 
 const getShowData = async () => {
 	const allShowsEndpoint: string = allShowsUrl;
@@ -15,9 +21,10 @@ const Home = async () => {
 	const { shows } = await getShowData();
 
 	return (
-		<div className="mt-5">
+		<div className="m-5">
 			<div className="w-full ">
 				<div className="w-5/6  mx-auto flex flex-col gap-5">
+					<h1 className="text-xl font-semibold">Discover daily</h1>
 					<div className="grid grid-cols-8 gap-3">
 						{shows.map((show: Show) => (
 							<div
@@ -28,7 +35,7 @@ const Home = async () => {
 									<Image
 										src={show.image.medium}
 										alt={show.name}
-										width={186}
+										width={184}
 										height={300}
 										className="image_all rounded-lg shadow-xl"
 									/>

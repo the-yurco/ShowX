@@ -32,7 +32,7 @@ const getShowData = async (id: number) => {
 };
 
 export const metadata: Metadata = {
-	title: `asd`,
+	title: `ShowX `,
 	description: 'ShowX website created by Iurai'
 };
 
@@ -63,11 +63,9 @@ const Show = async ({ params }: { params: { id: number } }) => {
 						</div>
 						<p className="text-sm">Language: {language}</p>
 
-						<Link
-							href={name}
-							target="_blank"
-							className="text-sm text-blue-600"
-						></Link>
+						<Link href={url} target="_blank" className="text-sm text-blue-600">
+							More...
+						</Link>
 					</div>
 				</div>
 			</div>
