@@ -3,6 +3,7 @@ import { showUrl } from '@/config';
 import type { Show } from '@/api/types';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Metadata } from 'next';
 
 const getShowData = async (id: number) => {
 	const showEndpoint: string = showUrl(id);
@@ -28,6 +29,11 @@ const getShowData = async (id: number) => {
 		language,
 		image
 	};
+};
+
+export const metadata: Metadata = {
+	title: `asd`,
+	description: 'ShowX website created by Iurai'
 };
 
 const Show = async ({ params }: { params: { id: number } }) => {

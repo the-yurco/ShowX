@@ -3,6 +3,7 @@ import { allShowsUrl, showUrl } from '@/config';
 import type { Show } from '@/api/types';
 import Link from 'next/link';
 import Image from 'next/image';
+import { PiTelevisionSimpleLight } from 'react-icons/pi';
 
 const getShowData = async () => {
 	const allShowsEndpoint: string = allShowsUrl;
@@ -17,27 +18,29 @@ const Home = async () => {
 	return (
 		<div className="mt-5">
 			<div className="w-full ">
-				<div className="w-5/6  mx-auto flex flex-col gap-5">
-					<div className="grid grid-cols-8 gap-3">
-						{shows.map((show: Show) => (
-							<div
-								key={show.id}
-								className="flex justify-center rounded-lg  border border-neutral-800 shadow-inner-lg relative shadow-xl"
-							>
-								<Link href={`/${show.id}`}>
-									<Image
-										src={show.image.medium}
-										alt={show.name}
-										width={186}
-										height={300}
-										className="image_all rounded-lg shadow-xl"
-									/>
-									<p className=" absolute bottom-0 right-0 bg-gradient-to-l from-neutral-900 text-white px-2 py-2 text-sm text-end min-w-20 rounded-br-lg font-semibold">
-										{show.rating.average}
-									</p>
-								</Link>
-							</div>
-						))}
+				<div className="w-5/6  mx-auto flex flex-col gap-5 ">
+					<div className="flex flex-col items-center mt-20 mb-10">
+						<PiTelevisionSimpleLight
+							style={{ fontSize: '5em' }}
+							className="text-neutral-700"
+						/>
+						<h1 className="text-3xl font-semibold text-center text-neutral-700">
+							The best library for TV shows
+						</h1>
+					</div>
+					<div className="flex gap-3 justify-center">
+						<Link
+							href={`/shows`}
+							className="bg-neutral-700 text-white px-4 py-2 rounded-xl  shadow-lg text-sm"
+						>
+							Discover our shows
+						</Link>
+						<Link
+							href={`/episodes`}
+							className="bg-neutral-400/40 text-neutral-500 px-4 py-2 rounded-xl border border-neutral-500 shadow-lg text-sm"
+						>
+							Episodes
+						</Link>
 					</div>
 				</div>
 			</div>
