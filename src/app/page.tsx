@@ -4,38 +4,37 @@ import type { Show } from '@/api/types';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const getShowData = async (id: string) => {
+const getShowData = async () => {
 	const allShowsEndpoint: string = allShowsUrl;
-
 	const shows = await FetchData<Show[]>(allShowsEndpoint);
 
 	return { shows };
 };
 
 const Home = async () => {
-	const { shows } = await getShowData('');
+	const { shows } = await getShowData();
 
 	return (
 		<div className="mt-5">
 			<div className="w-full ">
 				<div className="w-5/6  mx-auto flex flex-col gap-5">
-					<h1>TV Shows</h1>
-					<div className="grid grid-cols-6 gap-3">
+					<div className="grid grid-cols-8 gap-3">
 						{shows.map((show: Show) => (
 							<div
 								key={show.id}
-								className="flex justify-center bg-neutral-500/40 rounded-lg py-5 border border-neutral-500 shadow-inner-lg"
+								className="flex justify-center rounded-lg  border border-neutral-800 shadow-inner-lg relative shadow-xl"
 							>
 								<Link href={`/${show.id}`}>
-									{' '}
-									<p>{show.name}</p>
 									<Image
 										src={show.image.medium}
 										alt={show.name}
-										width={200}
-										height={100}
+										width={186}
+										height={300}
 										className="image_all rounded-lg shadow-xl"
 									/>
+									<p className=" absolute bottom-0 right-0 bg-gradient-to-l from-neutral-900 text-white px-2 py-2 text-sm text-end min-w-20 rounded-br-lg font-semibold">
+										{show.rating.average}
+									</p>
 								</Link>
 							</div>
 						))}
