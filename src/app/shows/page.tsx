@@ -25,23 +25,29 @@ const Home = async () => {
 			<div className="w-full ">
 				<div className="w-5/6  mx-auto flex flex-col gap-5">
 					<h1 className="text-xl font-semibold">Discover daily</h1>
-					<div className="grid grid-cols-8 gap-3">
-						{shows.map((show: Show) => (
+					<div className="grid grid-cols-7 gap-6">
+						{shows.map((show) => (
 							<div
 								key={show.id}
-								className="flex justify-center rounded-lg  border border-neutral-800 shadow-inner-lg relative shadow-xl"
+								className="relative overflow-hidden rounded-lg shadow-md bg-gray-100"
 							>
 								<Link href={`/shows/${show.id}`}>
-									<Image
-										src={show.image.medium}
-										alt={show.name}
-										width={184}
-										height={300}
-										className="image_all rounded-lg shadow-xl"
-									/>
-									<p className=" absolute bottom-0 right-0 bg-gradient-to-l from-neutral-900 text-white px-2 py-2 text-sm text-end min-w-20 rounded-br-lg font-semibold">
-										{show.rating.average}
-									</p>
+									<div
+										className="w-full h-64 bg-cover bg-center transition-all duration-300"
+										style={{ backgroundImage: `url(${show.image.medium})` }}
+									>
+										<div className="absolute inset-0 px-4 py-3 flex flex-col space-y-2 justify-end bg-gradient-to-b from-transparent to-neutral-900 opacity-0 hover:opacity-100 transition-opacity duration-300">
+											<h3 className="text-lg font-medium text-white truncate">
+												{show.name}
+											</h3>
+											<div className="flex items-center justify-between text-sm text-white/70">
+												<span>{show.genres.join(', ')}</span>
+												<div className="flex items-center ml-2 space-x-1">
+													<span>{show.rating.average}</span>
+												</div>
+											</div>
+										</div>
+									</div>
 								</Link>
 							</div>
 						))}

@@ -31,13 +31,13 @@ const Home = async () => {
 					<div className="flex gap-3 justify-center">
 						<Link
 							href={`/shows`}
-							className=" bg-neutral-700/80 text-neutral-300 px-4 py-2 rounded-xl text-sm  border border-neutral-600 shadow-md transition-all duration-300 hover:bg-neutral-700/90"
+							className=" bg-neutral-700/80 text-neutral-300 px-4 py-1 rounded-lg text-sm  border border-neutral-600 shadow-md transition-all duration-300 hover:bg-neutral-700/90"
 						>
 							Discover our shows
 						</Link>
 						<Link
 							href={`/episodes`}
-							className=" text-neutral-500 px-4 py-2 rounded-xl border border-neutral-400/55 text-sm shadow-inner transition-all duration-300 hover:bg-neutral-200/85"
+							className=" text-neutral-500 px-4 py-1 rounded-lg border border-neutral-400/55 text-sm shadow-inner transition-all duration-300 hover:bg-neutral-200/85"
 						>
 							Episodes
 						</Link>
