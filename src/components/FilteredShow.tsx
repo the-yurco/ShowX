@@ -54,9 +54,9 @@ const FilteredShowComponent = ({ show }: { show: Show | null }) => {
 							layout="fill"
 							objectFit="cover"
 							priority={index === currentImageIndex}
-							className="rounded-lg hero_image"
+							className="rounded-lg "
 						/>
-						<div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-transparent opacity-70"></div>
+						<div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-transparent "></div>
 					</div>
 				))}
 				{show && (
