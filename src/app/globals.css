@@ -1,11 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-img {
-	min-width: 20rem !important;
-	max-width: 20rem !important;
-}
-.image_all {
-	min-width: 1rem !important;
-}

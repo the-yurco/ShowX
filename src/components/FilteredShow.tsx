@@ -1,16 +1,13 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FetchData } from '@/api/fetchFunctions';
 import { showsAllImages } from '@/config';
 import type { ShowsImages, Show } from '@/api/types';
-import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
-interface FilteredShowProps {
-	show: Show | null;
-}
-
-const FilteredShowComponent = ({ show }: FilteredShowProps) => {
+const FilteredShowComponent = ({ show }: { show: Show | null }) => {
 	const [filteredShowImages, setFilteredShowImages] = useState<ShowsImages[]>(
 		[]
 	);
@@ -36,29 +33,46 @@ const FilteredShowComponent = ({ show }: FilteredShowProps) => {
 			setCurrentImageIndex(
 				(prevIndex) => (prevIndex + 1) % filteredShowImages.length
 			);
-		}, 3000);
+		}, 5000);
 
 		return () => clearInterval(interval);
 	}, [filteredShowImages]);
 
 	return (
-		<section
-			className="w-full h-[50vh] relative overflow-hidden rounded-lg shadow-md"
-			id="carousel"
-		>
-			{filteredShowImages.map((image, index) => (
-				<div
-					key={image.id}
-					className={`w-full h-full absolute top-0 left-0 transition-opacity duration-1000 ${
-						index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-					}`}
-					style={{
-						backgroundImage: `url(${image.resolutions.original.url})`,
-						backgroundSize: 'cover',
-						backgroundPosition: 'top'
-					}}
-				></div>
-			))}
+		<section className="relative overflow-hidden rounded-lg shadow-lg h-[30vh] w-3/6">
+			<Link href={`/shows/${show?.id}`}>
+				{filteredShowImages.map((image, index) => (
+					<div
+						key={image.id}
+						className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${
+							index === currentImageIndex ? '' : 'opacity-0'
+						}`}
+					>
+						<Image
+							src={image.resolutions.original.url}
+							alt={`Show background ${index + 1}`}
+							layout="fill"
+							objectFit="cover"
+							priority={index === currentImageIndex}
+							className="rounded-lg hero_image"
+						/>
+						<div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-transparent opacity-70"></div>
+					</div>
+				))}
+				{show && (
+					<div className="absolute bottom-5 left-5 z-10 text-white space-y-4">
+						<h2 className="text-xl font-bold">{show.name}</h2>
+						<div className="flex items-center space-x-4">
+							<span className="bg-neutral-700/80 text-neutral-300 px-4 py-1 rounded-lg text-sm  border border-neutral-600 shadow-md transition-all duration-300 hover:bg-neutral-700/90 hover:cursor-default">
+								Rating: {show.rating.average}
+							</span>
+							<span className="bg-neutral-700/80 text-neutral-300 px-4 py-1 rounded-lg text-sm  border border-neutral-600 shadow-md transition-all duration-300 hover:bg-neutral-700/90 hover:cursor-default">
+								{show.genres.join(', ')}
+							</span>
+						</div>
+					</div>
+				)}
+			</Link>
 		</section>
 	);
 };
