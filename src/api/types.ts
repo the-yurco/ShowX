@@ -53,14 +53,15 @@ export type Show = {
 	};
 };
 
-export type Episode = {
+export type ShowsImages = {
 	id: number;
-	name: string;
-	permalink: string;
-	start_date: string;
-	end_date: string | null;
-	country: string;
-	network: string;
-	status: 'Running' | 'Ended';
-	image_thumbnail_path: string;
+	type: string;
+	main: boolean;
+	resolutions: {
+		original: {
+			url: string;
+			width: number;
+			height: number;
+		};
+	};
 };
