@@ -31,19 +31,24 @@ const getShowData = async () => {
 		.slice(0, 7);
 
 	const filteredShow = shows.find((show) => show.id === 170);
+	const filteredShowSecond = shows.find((show) => show.id === 210);
 
-	return { shows, topRatedShows, newShows, filteredShow };
+	return { shows, topRatedShows, newShows, filteredShow, filteredShowSecond };
 };
 
 const Home = async () => {
-	const { shows, topRatedShows, newShows, filteredShow } = await getShowData();
+	const { shows, topRatedShows, newShows, filteredShow, filteredShowSecond } =
+		await getShowData();
 
 	return (
 		<div className="m-5">
 			<div className="w-full">
 				<div className="w-5/6 mx-auto flex flex-col gap-5">
 					<h1 className="text-xl font-semibold">{`Today's Most Watched !!!`}</h1>
-					<FilteredShowComponent show={filteredShow ?? null} />
+					<div className="flex gap-5">
+						<FilteredShowComponent show={filteredShow ?? null} />
+						<FilteredShowComponent show={filteredShowSecond ?? null} />
+					</div>
 					<section>
 						<h1 className="text-xl font-semibold">Top Rated Shows</h1>
 						<div className="grid grid-cols-7 gap-6">
