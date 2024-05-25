@@ -20,7 +20,7 @@ export default function RootLayout({
 		<div className="min-h-screen">
 			{/* <Suspense fallback={<NextLoadingSkeleton />}> */}
 			<div className="w-full flex flex-col justify-center">{children}</div>
-			{/* </Suspense>  */}
+			{/* </Suspense> */}
 		</div>
 	);
 }
