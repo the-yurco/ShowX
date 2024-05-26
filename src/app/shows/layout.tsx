@@ -17,9 +17,9 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<div className="min-h-screen">
+		<div className="">
 			{/* <Suspense fallback={<NextLoadingSkeleton />}> */}
-			<div className="w-full flex flex-col justify-center">{children}</div>
+			<div className="">{children}</div>
 			{/* </Suspense> */}
 		</div>
 	);
