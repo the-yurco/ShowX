@@ -17,6 +17,7 @@ const getShowData = async (id: number) => {
 	const genres = show.genres.slice(0, 3); // Limit to 3 genres
 	const language = show.language;
 	const image = show.image.original;
+	const lowImage = show.image.medium;
 
 	return {
 		name,
@@ -24,7 +25,8 @@ const getShowData = async (id: number) => {
 		url,
 		genres,
 		language,
-		image
+		image,
+		lowImage
 	};
 };
 
@@ -34,9 +36,8 @@ export const metadata: Metadata = {
 };
 
 const Show = async ({ params }: { params: { id: number } }) => {
-	const { name, summary, url, genres, language, image } = await getShowData(
-		params.id
-	);
+	const { name, summary, url, genres, language, image, lowImage } =
+		await getShowData(params.id);
 
 	return (
 		<section className="flex flex-col bg-gray-100 w-5/6 mx-auto">
@@ -49,7 +50,11 @@ const Show = async ({ params }: { params: { id: number } }) => {
 							alt={name}
 							height={400}
 							width={600}
-							className=" h-[35rem] w-full"
+							className="h-[35rem] w-full object-cover"
+							placeholder="blur"
+							blurDataURL={lowImage}
+							loading="lazy"
+							priority={false}
 						/>
 					</div>
 					<div className="lg:w-3/4 px-8 py-6 bg-white rounded-lg shadow-md h-[35rem] flex flex-col justify-between">
@@ -64,7 +69,7 @@ const Show = async ({ params }: { params: { id: number } }) => {
 								{genres.map((genre, index) => (
 									<p
 										key={index}
-										className="bg-neutral-700/80 text-neutral-300 px-4 py-1 rounded-lg text-sm  border border-neutral-600 shadow-md transition-all duration-300  hover:cursor-default"
+										className="bg-neutral-700/80 text-neutral-300 px-4 py-1 rounded-lg text-sm border border-neutral-600 shadow-md transition-all duration-300 hover:cursor-default"
 									>
 										{genre}
 									</p>
@@ -79,7 +84,7 @@ const Show = async ({ params }: { params: { id: number } }) => {
 							target="_blank"
 							className="text-base font-medium mt-6"
 						>
-							<span className=" text-blue-600 flex items-center gap-2">
+							<span className="text-blue-600 flex items-center gap-2">
 								More Info
 								<PiArrowRight />
 							</span>
