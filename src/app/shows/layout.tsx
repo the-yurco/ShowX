@@ -18,9 +18,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<div className="">
-			{/* <Suspense fallback={<NextLoadingSkeleton />}> */}
-			<div className="">{children}</div>
-			{/* </Suspense> */}
+			<Suspense fallback={<NextLoadingSkeleton />}>
+				<div className="">{children}</div>
+			</Suspense>
 		</div>
 	);
 }
