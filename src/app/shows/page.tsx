@@ -1,4 +1,4 @@
-import { FetchData } from '@/api/fetchFunctions';
+import { FetchData, FetchDataWithParams } from '@/api/fetchFunctions';
 import { allShowsUrl } from '@/config';
 import type { Show } from '@/api/types';
 import Link from 'next/link';

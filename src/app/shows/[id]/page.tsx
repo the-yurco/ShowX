@@ -40,7 +40,7 @@ const Show = async ({ params }: { params: { id: number } }) => {
 		await getShowData(params.id);
 
 	return (
-		<section className="flex flex-col bg-gray-100 w-5/6 mx-auto">
+		<section className="flex flex-col w-5/6 mx-auto">
 			<div className="mx-auto px-5 py-10 relative overflow-hidden rounded-lg shadow-lg">
 				<div className="absolute inset-0 bg-gradient-to-b from-transparent to-neutral-900 opacity-25 pointer-events-none"></div>
 				<div className="flex flex-col lg:flex-row lg:items-center gap-10">
