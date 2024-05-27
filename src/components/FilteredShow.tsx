@@ -24,10 +24,10 @@ const FilteredShowComponent = ({ show }: { show: Show | null }) => {
 						<div className="absolute bottom-5 left-5 z-10 text-white space-y-4">
 							<h2 className="text-xl font-bold">{show.name}</h2>
 							<div className="flex items-center space-x-4">
-								<span className="bg-neutral-700/80 text-neutral-300 px-4 py-1 rounded-lg text-sm border border-neutral-600 shadow-md transition-all duration-300 hover:bg-neutral-700/90 hover:cursor-default">
+								<span className="bg-neutral-700/80 text-neutral-300 px-4 py-1 rounded-md text-sm border border-neutral-600 shadow-md transition-all duration-300 hover:bg-neutral-700/90 hover:cursor-default">
 									Rating: {show.rating.average}
 								</span>
-								<span className="bg-neutral-700/80 text-neutral-300 px-4 py-1 rounded-lg text-sm border border-neutral-600 shadow-md transition-all duration-300 hover:bg-neutral-700/90 hover:cursor-default">
+								<span className="bg-neutral-700/80 text-neutral-300 px-4 py-1 rounded-md text-sm border border-neutral-600 shadow-md transition-all duration-300 hover:bg-neutral-700/90 hover:cursor-default">
 									{show.genres.join(', ')}
 								</span>
 							</div>

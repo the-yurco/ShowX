@@ -1,11 +1,26 @@
-import { FetchData, FetchDataWithParams } from '@/api/fetchFunctions';
-import { allShowsUrl } from '@/config';
-import type { Show } from '@/api/types';
-import Link from 'next/link';
+//! IMPORTS ------------------------------------------------------------
+
+// Importing Metadata
 import { Metadata } from 'next';
-import FilteredShowComponent from '@/components/FilteredShow';
-import ShowCard from '@/components/ShowCard';
+
+// Importing types
+import type { Show } from '@/api/types';
+
+// Importing the allShowsUrl constant from the config module
+import { allShowsUrl } from '@/config';
+
+// Importing functions for fetching data
+import { FetchData, FetchDataWithParams } from '@/api/fetchFunctions';
+
+// Importing Necessary components
 import dynamic from 'next/dynamic';
+
+const FilteredShowComponent = dynamic(
+	() => import('@/components/FilteredShow')
+);
+const ShowListSection = dynamic(() => import('@/components/ShowListSection'));
+
+//!----------------------------------------------------------------------
 
 export const metadata: Metadata = {
 	title: 'ShowX | Shows',
@@ -16,13 +31,19 @@ const getShowData = async () => {
 	const allShowsEndpoint: string = allShowsUrl;
 	const shows = await FetchData<Show[]>(allShowsEndpoint);
 
-	// Top rated shows
-	const topRatedShows = shows
-		.filter((show) => show.rating?.average !== null)
-		.sort((a, b) => b.rating.average - a.rating.average)
-		.slice(0, 7);
+	const filterAndSortShows = (
+		filterFn: (show: Show) => boolean,
+		sortFn: (a: Show, b: Show) => number
+	) => {
+		const filteredShows = shows.filter(filterFn);
+		return filteredShows.sort(sortFn).slice(0, 7);
+	};
 
-	// New shows
+	const topRatedShows = filterAndSortShows(
+		(show) => show.rating?.average !== null,
+		(a, b) => b.rating.average - a.rating.average
+	);
+
 	const newShows = shows
 		.filter((show) => new Date(show.premiered).getTime())
 		.sort(
@@ -50,22 +71,8 @@ const Home = async () => {
 						<FilteredShowComponent show={filteredShow ?? null} />
 						<FilteredShowComponent show={filteredShowSecond ?? null} />
 					</div>
-					<section>
-						<h1 className="text-xl font-semibold">Top Rated Shows</h1>
-						<div className="grid grid-cols-7 gap-6">
-							{topRatedShows.map((show) => (
-								<ShowCard show={show} key={show.id} />
-							))}
-						</div>
-					</section>
-					<section>
-						<h1 className="text-xl font-semibold">New Shows</h1>
-						<div className="grid grid-cols-7 gap-6">
-							{newShows.map((show) => (
-								<ShowCard show={show} key={show.id} />
-							))}
-						</div>
-					</section>
+					<ShowListSection title="Top Rated Shows" shows={topRatedShows} />
+					<ShowListSection title="New Shows" shows={newShows} />
 				</div>
 			</div>
 		</div>
