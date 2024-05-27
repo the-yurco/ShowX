@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const Home = async () => {
 	return (
-		<div className="m-5">
+		<div className="mt-5">
 			<div className="w-full ">
 				<div className="w-5/6  mx-auto flex flex-col gap-5">
 					<h1 className="text-xl font-semibold">

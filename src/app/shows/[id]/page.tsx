@@ -18,6 +18,7 @@ const getShowData = async (id: number) => {
 	const language = show.language;
 	const image = show.image.original;
 	const lowImage = show.image.medium;
+	const updated = show.updated;
 
 	return {
 		name,
@@ -26,7 +27,8 @@ const getShowData = async (id: number) => {
 		genres,
 		language,
 		image,
-		lowImage
+		lowImage,
+		updated
 	};
 };
 
@@ -36,7 +38,7 @@ export const metadata: Metadata = {
 };
 
 const Show = async ({ params }: { params: { id: number } }) => {
-	const { name, summary, url, genres, language, image, lowImage } =
+	const { name, summary, url, genres, language, image, lowImage, updated } =
 		await getShowData(params.id);
 
 	return (
