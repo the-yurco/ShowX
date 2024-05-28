@@ -13,13 +13,9 @@ import { allShowsUrl } from '@/config';
 import { FetchData } from '@/api/fetchFunctions';
 
 // Importing Necessary components
-import dynamic from 'next/dynamic';
 import FilteredShowComponent from '@/components/FilteredShow';
 import ShowListSection from '@/components/ShowListSection';
 
-// const FilteredShowComponent = dynamic(
-// 	() => import('@/components/FilteredShow')
-// );
 // const ShowListSection = dynamic(() => import('@/components/ShowListSection'));
 
 //!----------------------------------------------------------------------
@@ -75,6 +71,7 @@ const Home = async () => {
 					</div>
 					<ShowListSection title="Top Rated Shows" shows={topRatedShows} />
 					<ShowListSection title="New Shows" shows={newShows} />
+					{/* <ShowListSection title="All Shows" shows={shows} /> */}
 				</div>
 			</div>
 		</div>
