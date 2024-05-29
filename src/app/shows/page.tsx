@@ -15,6 +15,7 @@ import { FetchData } from '@/api/fetchFunctions';
 // Importing Necessary components
 import FilteredShowComponent from '@/components/FilteredShow';
 import ShowListSection from '@/components/ShowListSection';
+import Footer from '@/components/Footer';
 
 // const ShowListSection = dynamic(() => import('@/components/ShowListSection'));
 
@@ -74,6 +75,7 @@ const Home = async () => {
 					{/* <ShowListSection title="All Shows" shows={shows} /> */}
 				</div>
 			</div>
+			<Footer />
 		</div>
 	);
 };

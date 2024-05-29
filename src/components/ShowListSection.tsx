@@ -1,5 +1,5 @@
 import { Show } from '@/api/types';
-// import ShowCard from './ShowCard';
+import ShowCard from './ShowCard';
 import dynamic from 'next/dynamic';
 
 interface SectionProps {
@@ -8,8 +8,6 @@ interface SectionProps {
 }
 
 const ShowListSection = ({ title, shows }: SectionProps) => {
-	const ShowCard = dynamic(() => import('@/components/ShowCard'));
-
 	return (
 		<section>
 			<h1 className="text-xl font-semibold">{title}</h1>

@@ -8,7 +8,10 @@ const FilteredShowComponent = ({ show }: { show: Show | null }) => {
 		() => import('@/components/FilteredShowImages'),
 		{
 			loading: () => (
-				<div className="flex items-center justify-center h-screen">
+				<div className="flex items-center justify-center">
+					- + -{' '}
+					<div className="animate-spin-fast rounded-full border-t-4 border-b-4 border-gray-500 h-16 w-16"></div>
+					- -{' '}
 					<div className="animate-spin rounded-full border-t-4 border-b-4 border-gray-500 h-16 w-16"></div>
 				</div>
 			)

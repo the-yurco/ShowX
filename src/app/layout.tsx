@@ -22,7 +22,7 @@ export default function RootLayout({
 			<body className={`${inter.className}bg-neutral-400 min-h-dvh`}>
 				<Header />
 				<Suspense fallback={<NextLoadingSkeleton />}>{children}</Suspense>
-				<Footer />
+				{/* <Footer /> */}
 			</body>
 		</html>
 	);
