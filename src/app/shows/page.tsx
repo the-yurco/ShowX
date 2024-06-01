@@ -51,15 +51,28 @@ const getShowData = async () => {
 		)
 		.slice(0, 7);
 
+	const otherShows = shows.slice(0, 21);
+
 	const filteredShow = shows.find((show) => show.id === 170);
 	const filteredShowSecond = shows.find((show) => show.id === 210);
 
-	return { shows, topRatedShows, newShows, filteredShow, filteredShowSecond };
+	return {
+		otherShows,
+		topRatedShows,
+		newShows,
+		filteredShow,
+		filteredShowSecond
+	};
 };
 
 const Home = async () => {
-	const { shows, topRatedShows, newShows, filteredShow, filteredShowSecond } =
-		await getShowData();
+	const {
+		otherShows,
+		topRatedShows,
+		newShows,
+		filteredShow,
+		filteredShowSecond
+	} = await getShowData();
 
 	return (
 		<div className="mt-5">
@@ -72,7 +85,7 @@ const Home = async () => {
 					</div>
 					<ShowListSection title="Top Rated Shows" shows={topRatedShows} />
 					<ShowListSection title="New Shows" shows={newShows} />
-					{/* <ShowListSection title="All Shows" shows={shows} /> */}
+					<ShowListSection title="All Shows" shows={otherShows} />
 				</div>
 			</div>
 			<Footer />
