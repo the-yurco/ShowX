@@ -1,7 +1,16 @@
+//! IMPORTS ------------------------------------------------------------
+
+// Importing necessary features from the nextjs library
 import Link from 'next/link';
 import React from 'react';
+
+// Importing necessary components
 import SearchBar from './SearchBar';
+
+// Importing Icons
 import { PiTelevisionSimpleLight } from 'react-icons/pi';
+
+//! ----------------------------------------------------------------------
 
 type Props = {};
 

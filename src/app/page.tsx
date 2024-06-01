@@ -1,8 +1,21 @@
+//! IMPORTS ------------------------------------------------------------
+
+// Importing functions for fetching data
 import { FetchData } from '@/api/fetchFunctions';
-import { allShowsUrl, showUrl } from '@/config';
+
+// Importing allShowUrl constant from the config module
+import { allShowsUrl } from '@/api/config';
+
+// Importing types
 import type { Show } from '@/api/types';
+
+// Importing necessary features from the nextjs library
 import Link from 'next/link';
+
+// Importing Icons
 import { PiTelevisionSimpleLight } from 'react-icons/pi';
+
+//! ----------------------------------------------------------------------
 
 const getShowData = async () => {
 	const allShowsEndpoint: string = allShowsUrl;

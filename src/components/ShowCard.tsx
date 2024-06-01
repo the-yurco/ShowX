@@ -1,6 +1,13 @@
+//! IMPORTS ------------------------------------------------------------
+
+// Importing necessary features from the nextjs library
 import Link from 'next/link';
 import Image from 'next/image';
+
+// Importing types
 import type { Show } from '@/api/types';
+
+//! ----------------------------------------------------------------------
 
 interface ShowCardProps {
 	show: Show;

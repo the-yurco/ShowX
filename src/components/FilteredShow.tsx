@@ -1,7 +1,13 @@
-import React from 'react';
+//! IMPORTS ------------------------------------------------------------
+
+// Importing types
 import { Show } from '@/api/types';
+
+// Importing necessary features from the nextjs library
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+
+//!----------------------------------------------------------------------
 
 const FilteredShowComponent = ({ show }: { show: Show | null }) => {
 	const DynamicFilteredShowImages = dynamic(

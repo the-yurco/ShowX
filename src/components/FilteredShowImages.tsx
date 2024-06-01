@@ -1,10 +1,23 @@
 'use client';
 
+//! IMPORTS ------------------------------------------------------------
+
+// Importing React features
 import React, { useState, useEffect } from 'react';
+
+// Importing functions for fetching data
 import { FetchData } from '@/api/fetchFunctions';
-import { showsAllImages } from '@/config';
+
+// Importing showAllImages constant from the config module
+import { showsAllImages } from '@/api/config';
+
+// Importing types
 import type { ShowsImages } from '@/api/types';
+
+// Importing necessary features from the nextjs library
 import Image from 'next/image';
+
+//!----------------------------------------------------------------------
 
 interface FilteredShowImagesProps {
 	showId: number;

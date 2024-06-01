@@ -7,7 +7,7 @@ import { Metadata } from 'next';
 import type { Show } from '@/api/types';
 
 // Importing the allShowsUrl constant from the config module
-import { allShowsUrl } from '@/config';
+import { allShowsUrl } from '@/api/config';
 
 // Importing functions for fetching data
 import { FetchData } from '@/api/fetchFunctions';

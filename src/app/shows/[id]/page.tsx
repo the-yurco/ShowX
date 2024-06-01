@@ -1,10 +1,25 @@
+//! IMPORTS ------------------------------------------------------------
+
+//Importing Metadata
+import { Metadata } from 'next';
+
+// Importing functions for fetching data
 import { FetchData } from '@/api/fetchFunctions';
-import { showUrl } from '@/config';
+
+// Importing showUrl constant from the config module
+import { showUrl } from '@/api/config';
+
+// Import types
 import type { Show } from '@/api/types';
+
+// Importing necessary features from the nextjs library
 import Link from 'next/link';
 import Image from 'next/image';
-import { Metadata } from 'next';
+
+// Importing Icons
 import { PiArrowRight } from 'react-icons/pi';
+
+//! ----------------------------------------------------------------------
 
 const getShowData = async (id: number) => {
 	const showEndpoint: string = showUrl(id);

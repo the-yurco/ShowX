@@ -1,10 +1,25 @@
+//! IMPORTS ------------------------------------------------------------
+
+// Importing Metadata
 import type { Metadata } from 'next';
+
+// Importing Inter font
 import { Inter } from 'next/font/google';
+
+// Importing styles
 import './globals.css';
+
+// Importing necessary components
 import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+
+// Importing React features
 import { Suspense } from 'react';
+
+// Importing necessary components
 import NextLoadingSkeleton from './loading';
+
+//!----------------------------------------------------------------------
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {

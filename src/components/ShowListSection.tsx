@@ -1,6 +1,12 @@
+//! IMPORTS ------------------------------------------------------------
+
+// Importing types
 import { Show } from '@/api/types';
+
+// Importing necessary components
 import ShowCard from './ShowCard';
-import dynamic from 'next/dynamic';
+
+//!----------------------------------------------------------------------
 
 interface SectionProps {
 	title: string;

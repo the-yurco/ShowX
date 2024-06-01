@@ -1,5 +1,9 @@
-import React from 'react';
+//! IMPORTS ------------------------------------------------------------
+
+// Importing Icons
 import { PiTelevisionSimpleLight } from 'react-icons/pi';
+
+//! ----------------------------------------------------------------------
 
 const NextLoadingSkeleton = () => {
 	return (

@@ -1,6 +1,9 @@
-import Link from 'next/link';
-import Image from 'next/image';
+//! IMPORTS ------------------------------------------------------------
+
+// Importing Metadata
 import { Metadata } from 'next';
+
+//!----------------------------------------------------------------------
 
 export const metadata: Metadata = {
 	title: 'ShowX | Episodes',
