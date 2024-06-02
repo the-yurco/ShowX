@@ -28,19 +28,19 @@ const Header = (props: Props) => {
 					<div className="flex gap-6 items-center">
 						<Link
 							href={'/shows'}
-							className="hover:text-neutral-200 transition-all duration-300"
+							className="hover:text-neutral-300 transition-all duration-300"
 						>
 							Shows
 						</Link>
 						<Link
 							href={'/about'}
-							className="hover:text-neutral-200 transition-all duration-300"
+							className="hover:text-neutral-300 transition-all duration-300"
 						>
 							About
 						</Link>
 						<Link
 							href={'/favourites'}
-							className="hover:text-neutral-200 transition-all duration-300"
+							className="hover:text-neutral-300 transition-all duration-300"
 						>
 							Favourites
 						</Link>

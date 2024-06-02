@@ -58,8 +58,8 @@ const Show = async ({ params }: { params: { id: number } }) => {
 
 	return (
 		<section className="flex flex-col w-5/6 mx-auto">
-			<div className="mx-auto px-5 py-10 relative overflow-hidden rounded-lg shadow-lg">
-				<div className="absolute inset-0 bg-gradient-to-b from-transparent to-neutral-900 opacity-25 pointer-events-none"></div>
+			<div className="mx-auto px-5 py-10 relative overflow-hidden rounded-lg ">
+				<div className="absolute inset-0 bg-gradient-to-b from-transparent  opacity-25 pointer-events-none"></div>
 				<div className="flex flex-col lg:flex-row lg:items-center gap-10">
 					<div className="lg:w-1/4 overflow-hidden rounded-lg">
 						<Image
@@ -74,28 +74,29 @@ const Show = async ({ params }: { params: { id: number } }) => {
 							priority={false}
 						/>
 					</div>
-					<div className="lg:w-3/4 px-8 py-6 bg-white rounded-lg shadow-md h-[35rem] flex flex-col justify-between">
+					<div className="lg:w-3/4 px-8 py-6 bg-white rounded-lg h-[35rem] flex flex-col justify-between">
 						<div>
 							<h1 className="text-3xl font-bold leading-tight text-neutral-900">
 								{name}
 							</h1>
 							<p className="text-lg mb-4 text-neutral-700">{summary}</p>
-						</div>
-						<div>
-							<div className="flex flex-wrap gap-2">
-								{genres.map((genre, index) => (
-									<p
-										key={index}
-										className="bg-neutral-700/80 text-neutral-300 px-4 py-1 rounded-lg text-sm border border-neutral-600 shadow-md transition-all duration-300 hover:cursor-default"
-									>
-										{genre}
-									</p>
-								))}
+							<div>
+								<div className="flex flex-wrap gap-2">
+									{genres.map((genre, index) => (
+										<p
+											key={index}
+											className="bg-neutral-700/80 text-neutral-300 px-4 py-1 rounded-lg text-sm border border-neutral-600 shadow-md transition-all duration-300 hover:cursor-default"
+										>
+											{genre}
+										</p>
+									))}
+								</div>
+								<div className="flex items-center mt-4 text-gray-700">
+									<span>Language: {language}</span>
+								</div>
 							</div>
-							<div className="flex items-center mt-4 text-gray-700">
-								<span>Language: {language}</span>
-							</div>
 						</div>
+
 						<Link
 							href={url}
 							target="_blank"

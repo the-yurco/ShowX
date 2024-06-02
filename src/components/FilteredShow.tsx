@@ -25,9 +25,9 @@ const FilteredShowComponent = ({ show }: { show: Show | null }) => {
 	);
 
 	return (
-		<section className="relative overflow-hidden rounded-lg shadow-lg h-[30vh] w-3/6">
+		<section className="relative overflow-hidden rounded-lg shadow-lg h-[40vh] w-3/6">
 			{show && (
-				<Link href={`/shows/${show.id}`}>
+				<Link href={`/shows/${show.id}`} className="transform">
 					<>
 						<DynamicFilteredShowImages showId={show.id} />
 						<div className="absolute bottom-5 left-5 z-10 text-white space-y-4">

@@ -78,14 +78,14 @@ const Home = async () => {
 		<div className="mt-5">
 			<div className="w-full">
 				<div className="w-5/6 mx-auto flex flex-col gap-5">
-					<h1 className="text-xl font-semibold">{`Today's Most Watched !!!`}</h1>
-					<div className="flex gap-5">
+					<h1 className="text-4xl font-semibold text-center my-10 text-neutral-700">{`Today's Most Watched !!!`}</h1>
+					<div className="flex gap-5 mb-10">
 						<FilteredShowComponent show={filteredShow ?? null} />
 						<FilteredShowComponent show={filteredShowSecond ?? null} />
 					</div>
 					<ShowListSection title="Top Rated Shows" shows={topRatedShows} />
 					<ShowListSection title="New Shows" shows={newShows} />
-					<ShowListSection title="All Shows" shows={otherShows} />
+					<ShowListSection title="Other Shows" shows={otherShows} />
 				</div>
 			</div>
 			<Footer />

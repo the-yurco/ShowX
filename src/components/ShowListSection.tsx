@@ -15,9 +15,9 @@ interface SectionProps {
 
 const ShowListSection = ({ title, shows }: SectionProps) => {
 	return (
-		<section>
-			<h1 className="text-xl font-semibold">{title}</h1>
-			<div className="grid grid-cols-7 gap-6">
+		<section className="p-5 bg-gradient-to-b from-transparent via-neutral-700/30 via-50% to-transparent  flex flex-col gap-5 ">
+			<h1 className="text-2xl font-semibold text-neutral-900">{title}</h1>
+			<div className="grid grid-cols-7 gap-6 mb-20 ">
 				{shows.map((show) => (
 					<ShowCard show={show} key={show.id} />
 				))}

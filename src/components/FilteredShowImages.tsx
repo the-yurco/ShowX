@@ -68,8 +68,8 @@ const FilteredShowImages = ({ showId }: FilteredShowImagesProps) => {
 						objectFit="cover"
 						priority={index === currentImageIndex}
 						className="rounded-lg"
-						width={500}
-						height={1000}
+						width={1000}
+						height={500}
 					/>
 					<div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-transparent"></div>
 				</div>

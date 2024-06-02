@@ -16,10 +16,10 @@ interface ShowCardProps {
 const ShowCard = ({ show }: ShowCardProps) => (
 	<div
 		key={show.id}
-		className="relative overflow-hidden rounded-lg shadow-md bg-gray-100"
+		className="relative overflow-hidden rounded-lg shadow-lg shadow-neutral-700/60 bg-gray-100 "
 	>
 		<Link href={`/shows/${show.id}`}>
-			<div className="w-full h-72 relative transition-all duration-300">
+			<div className="w-full h-72 relative transition-all duration-300 ">
 				<Image
 					src={show.image.original}
 					alt={show.name}
