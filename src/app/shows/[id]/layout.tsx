@@ -6,9 +6,6 @@ import type { Metadata } from 'next';
 // Importing Inter font
 import { Inter } from 'next/font/google';
 
-// Importing styles
-import './globals.css';
-
 // Importing React features
 import { Suspense } from 'react';
 
