@@ -1,8 +1,4 @@
-import { FetchData } from '@/api/fetchFunctions';
-import { showUrl } from '@/config';
 import type { Show } from '@/api/types';
-import Link from 'next/link';
-import Image from 'next/image';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
