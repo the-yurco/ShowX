@@ -85,7 +85,7 @@ const Home = async () => {
 					</div>
 					<ShowListSection title="Top Rated Shows" shows={topRatedShows} />
 					<ShowListSection title="New Shows" shows={newShows} />
-					<ShowListSection title="Other Shows" shows={otherShows} />
+					<ShowListSection title="Other Shows !!!" shows={otherShows} />
 				</div>
 			</div>
 			<Footer />
