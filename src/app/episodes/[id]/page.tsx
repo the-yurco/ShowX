@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 const Show = async ({ params }: { params: { id: number } }) => {
 	return (
 		<div className="mt-5">
-			<div className="w-full ">
+			<div className="w-full">
 				<div className="w-5/6  mx-auto flex gap-5"></div>
 			</div>
 		</div>
