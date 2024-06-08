@@ -57,19 +57,17 @@ const FilteredShowImages = ({ showId }: FilteredShowImagesProps) => {
 			{filteredShowImages.map((image, index) => (
 				<div
 					key={image.id}
-					className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${
+					className={`absolute top-0 left-0 w-full h-full overflow-hidden transition-opacity duration-1000 ${
 						index === currentImageIndex ? '' : 'opacity-0'
 					}`}
 				>
 					<Image
 						src={image.resolutions.original.url}
 						alt={`Show background ${index + 1}`}
-						layout="responsive"
+						layout="fill"
 						objectFit="cover"
 						priority={index === currentImageIndex}
-						className="rounded-lg"
-						width={1000}
-						height={500}
+						className="rounded-lg object-cover"
 					/>
 					<div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-transparent"></div>
 				</div>

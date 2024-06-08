@@ -14,7 +14,7 @@ type Props = {};
 const Footer = () => {
 	return (
 		<footer className="bg-neutral-700 text-white  shadow  mt-5">
-			<div className="w-5/6 max-w-screen-xl mx-auto p-4 md:py-8 flex justify-between items-center">
+			<div className="w-5/6 max-w-screen-xl mx-auto p-4 py-2 flex justify-between items-center">
 				<div className="flex items-center gap-12">
 					<Link href="/" className="flex items-center ">
 						<h1 className=" font-semibold flex items-center gap-2">
