@@ -7,22 +7,12 @@ import { Show } from '@/api/types';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
+import DynamicFilteredShowImages from './FilteredShowImages';
+
 //!----------------------------------------------------------------------
 
 const FilteredShowComponent = ({ show }: { show: Show | null }) => {
-	const DynamicFilteredShowImages = dynamic(
-		() => import('@/components/FilteredShowImages'),
-		{
-			loading: () => (
-				<div className="flex items-center justify-center">
-					- + -{' '}
-					<div className="animate-spin-fast rounded-full border-t-4 border-b-4 border-gray-500 h-16 w-16"></div>
-					- -{' '}
-					<div className="animate-spin rounded-full border-t-4 border-b-4 border-gray-500 h-16 w-16"></div>
-				</div>
-			)
-		}
-	);
+	// const DynamicFilteredShowImages = dynamic(s
 
 	return (
 		<section className="relative overflow-hidden rounded-lg shadow-lg h-[40vh] w-3/6">
