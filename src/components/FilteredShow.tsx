@@ -5,19 +5,15 @@ import { Show } from '@/api/types';
 
 // Importing necessary features from the nextjs library
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
 
 import DynamicFilteredShowImages from './FilteredShowImages';
 
 //!----------------------------------------------------------------------
 
 const FilteredShowComponent = ({ show }: { show: Show | null }) => {
-	// const DynamicFilteredShowImages = dynamic(s
-
 	return (
 		<section className="relative overflow-hidden rounded-lg shadow-lg h-[40vh] w-full">
 			{' '}
-			{/* Removed width */}
 			{show && (
 				<Link href={`/shows/${show.id}`} className="transform">
 					<>
