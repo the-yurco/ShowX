@@ -15,9 +15,11 @@ interface SectionProps {
 
 const ShowListSection = ({ title, shows }: SectionProps) => {
 	return (
-		<section className="p-5 bg-gradient-to-b from-transparent via-neutral-700/30 via-50% to-transparent  flex flex-col gap-5 ">
-			<h1 className="text-2xl font-semibold text-neutral-900">{title}</h1>
-			<div className="grid gap-6 mb-20 grid-flow-row xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7">
+		<section className="p-10 bg-neutral-50 flex flex-col gap-8 rounded-3xl shadow-lg transition-all duration-300">
+			<h1 className="text-3xl font-extrabold text-neutral-900 tracking-tight mb-8">
+				{title}
+			</h1>
+			<div className="grid gap-8 grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7">
 				{shows.map((show) => (
 					<ShowCard show={show} key={show.id} />
 				))}

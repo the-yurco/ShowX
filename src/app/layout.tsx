@@ -4,7 +4,7 @@
 import type { Metadata } from 'next';
 
 // Importing Inter font
-import { Inter } from 'next/font/google';
+import { Reddit_Mono } from 'next/font/google';
 
 // Importing styles
 import './globals.css';
@@ -20,7 +20,9 @@ import NextLoadingSkeleton from './loading';
 
 //!----------------------------------------------------------------------
 
-const inter = Inter({ subsets: ['latin'] });
+const font = Reddit_Mono({
+	subsets: ['latin']
+});
 
 export const metadata: Metadata = {
 	title: 'ShowX',
@@ -34,10 +36,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${inter.className}bg-neutral-400 min-h-dvh`}>
+			<body className={`${font.className}bg-neutral-400 min-h-dvh`}>
 				<Header />
 				<Suspense fallback={<NextLoadingSkeleton />}>{children}</Suspense>
-				{/* <Footer /> */}
 			</body>
 		</html>
 	);

@@ -16,22 +16,22 @@ interface ShowCardProps {
 const ShowCard = ({ show }: ShowCardProps) => (
 	<div
 		key={show.id}
-		className="relative overflow-hidden rounded-lg shadow-lg shadow-neutral-700/60 bg-gray-100 "
+		className="relative overflow-hidden rounded-xl shadow-md bg-white transition-transform duration-300 transform hover:scale-105 hover:shadow-xl"
 	>
 		<Link href={`/shows/${show.id}`}>
-			<div className="w-full h-72 relative transition-all duration-300 ">
+			<div className="w-full h-72 relative">
 				<Image
 					src={show.image.original}
 					alt={show.name}
 					layout="fill"
 					objectFit="cover"
-					className="transition-opacity duration-300 bg-position"
+					className=" transition-opacity duration-300"
 					priority={true}
 					blurDataURL={show.image.medium}
 					placeholder="blur"
 				/>
-				<div className="absolute inset-0 px-4 py-3 flex flex-col space-y-2 justify-end bg-gradient-to-b from-transparent to-neutral-900 opacity-0 hover:opacity-100 transition-opacity duration-300">
-					<h3 className="text-lg font-medium text-white truncate">
+				<div className="absolute inset-0 p-4 flex flex-col space-y-2 justify-end bg-gradient-to-b from-transparent to-black/60 opacity-0 hover:opacity-100 transition-opacity duration-300">
+					<h3 className="text-lg font-semibold text-white truncate">
 						{show.name}
 					</h3>
 					<div className="flex items-center justify-between text-sm text-white/70">
